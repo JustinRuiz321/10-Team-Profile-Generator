@@ -1,0 +1,28 @@
+{
+    "name": "team-profile-generator",
+    "version": "1.0.0",
+    "description": "Based off the responses on the command line, create an HTML containing the information of managers, engineers, or interns",
+    "main": "index.js",
+    "directories": {
+      "lib": "lib",
+      "test": "tests"
+    },
+    "scripts": {
+      "test": "jest"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/JustinRuiz321/10-Team-Profile-Generator"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/JustinRuiz321/10-Team-Profile-Generator/issues"
+    },
+    "homepage": "https://github.com/JustinRuiz321/10-Team-Profile-Generator#readme",
+    "dependencies": {
+      "inquirer": "^6.2.1",
+      "jest": "^24.8.0"
+    }
+  }
