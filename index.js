@@ -6,6 +6,8 @@ const Intern = require('./lib/intern.js');
 
 const departmentArr = [];
 
+const generateHTML = require('./js/generateHTML.js')
+
 function managerInfo() {
     inquirer.prompt([
         {
@@ -137,15 +139,16 @@ function hirePersonel() {
         } else if (hired === 'Engineer') {
             engineerInfo();
         } else if (hired === 'Finished') {
-            writeFile(filedata, departmentArr);
+            const fileData = generateHTML(departmentArr);
+            writeFile(fileData, departmentArr);
         } else {
             console.log(err);
         }
     })
 };
 
-function writeFile(filedata, departmentArr){
-    fs.writeFile('./dist/index.html', filedata, (err) => {
+function writeFile(fileData, departmentArr){
+    fs.writeFile('./dist/index.html', fileData, (err) => {
         if(err) {
             console.log(err);
             return;
