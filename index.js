@@ -41,9 +41,9 @@ function managerInfo() {
         this.Manager = new Manager(managerName, managerID, managerEmail, managerOffice);
         departmentArr.push(this.Manager)
         hirePersonel();
-    })
+    });
 
-}
+};
 
 function internInfo() {
     inquirer.prompt([
@@ -67,11 +67,22 @@ function internInfo() {
         },
         {
             type: 'input',
+            name: 'internEmail',
+            message: "What is the intern's e-mail address?"
+        },
+        {
+            type: 'input',
             name: 'internSchool',
             message: "What school is the intern going to?"
         }
     ])
-}
+    .then(({internName, internID, internEmail, internSchool}) => {
+        this.Intern = new Intern(internName, internID, internEmail, internSchool);
+        departmentArr.push(this.Intern);
+        hirePersonel();
+    })
+};
+
 function engineerInfo() {
     inquirer.prompt([
         {
@@ -92,13 +103,24 @@ function engineerInfo() {
             name: 'engineerID',
             message: "What is going to be the Engineer's ID number?",
             
+        },
+        {
+            type: 'input',
+            name: 'engineerEmail',
+            message: "What is the Engineer's e-mail address?"
+        },
+        {
+            type: 'input',
+            name: 'engineerGithub',
+            message: 'What is the github username of the Engineer?'
         }
     ])
-}
-
-function teamProfile(){
-    managerInfo();
-}
+    .then(({engineerName, engineerID, engineerEmail, engineerGithub}) => {
+        this.Engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGithub);
+        departmentArr.push(this.Engineer);
+        hirePersonel();
+    })
+};
 
 function hirePersonel() {
     inquirer.prompt ([
@@ -115,9 +137,26 @@ function hirePersonel() {
         } else if (hired === 'Engineer') {
             engineerInfo();
         } else if (hired === 'Finished') {
-            fs.writeFile(filedata, departmentArr);
+            writeFile(filedata, departmentArr);
         } else {
             console.log(err);
         }
     })
-}
+};
+
+function writeFile(filedata, departmentArr){
+    fs.writeFile('./dist/index.html', filedata, (err) => {
+        if(err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Team was created")
+        }
+    })
+};
+
+function teamProfile(){
+    managerInfo();
+};
+
+teamProfile();
