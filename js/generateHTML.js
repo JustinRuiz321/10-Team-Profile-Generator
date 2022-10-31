@@ -39,7 +39,7 @@ const generateTeamPage = team => {
     for (let i = 0; team.length > i; i++) {
         const departmentProfile = team[i];
         const departmentRole = departmentProfile.getRole();
-console.log("role", departmentRole)
+
         if (departmentRole === 'Manager') {
             const manager = managerInfo(departmentProfile);
             teamSections.push(manager);
