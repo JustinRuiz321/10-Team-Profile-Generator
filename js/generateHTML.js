@@ -1,3 +1,5 @@
+//Generating the HTML file for the cards of the department
+
 const generateHTML = teamProfiles => {
     return `
     <!DOCTYPE html>
@@ -33,7 +35,7 @@ const generateHTML = teamProfiles => {
 `
 }
 
-// Creating an array get cards to page 
+// Create the cards underneath the header 
 const generateTeamPage = team => {
     const teamSections = [];
     for (let i = 0; team.length > i; i++) {
@@ -60,6 +62,8 @@ const generateTeamPage = team => {
 
 }
 
+
+//Manager's card
 const managerInfo = manager => {
     return `
     <section class="card col-3 m-3">
@@ -79,6 +83,7 @@ const managerInfo = manager => {
     `
 };
 
+//Engineer's Card
 const engineerInfo = engineer => {
     return `
     <section class="card col-3 m-3">
@@ -99,6 +104,8 @@ const engineerInfo = engineer => {
     `
 };
 
+
+//Intern's Card
 const internInfo = intern => {
     return `
     <div class="card col-3 m-3">
