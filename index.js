@@ -64,6 +64,11 @@ function internInfo() {
             type: 'input',
             name: 'internID',
             message: "What is going to be the intern's ID number?"
+        },
+        {
+            type: 'input',
+            name: 'internSchool',
+            message: "What school is the intern going to?"
         }
     ])
 }
