@@ -6,8 +6,9 @@ const Intern = require('./lib/intern.js');
 
 const departmentArr = [];
 
-const generateHTML = require('./js/generateHTML.js')
+const generateHTML = require('./js/generateHTML.js');
 
+//Function to prompt the command line to ask questions to fill Manager's info
 function managerInfo() {
     inquirer.prompt([
         {
@@ -47,6 +48,9 @@ function managerInfo() {
 
 };
 
+
+
+//Function to prompt the command line to ask questions to fill Interns's info
 function internInfo() {
     inquirer.prompt([
         {
@@ -85,6 +89,8 @@ function internInfo() {
     })
 };
 
+
+//Function to prompt the command line to ask questions to fill Engineer's info
 function engineerInfo() {
     inquirer.prompt([
         {
@@ -124,6 +130,8 @@ function engineerInfo() {
     })
 };
 
+
+//Function to ask the Manager who they are bringing along with them to the department
 function hirePersonel() {
     inquirer.prompt ([
         {
@@ -147,6 +155,7 @@ function hirePersonel() {
     })
 };
 
+//Function to send the information over to the HTML file
 function writeFile(fileData, departmentArr){
     fs.writeFile('./dist/index.html', fileData, (err) => {
         if(err) {
@@ -158,6 +167,8 @@ function writeFile(fileData, departmentArr){
     })
 };
 
+
+//Function to run the code in the command line using node index.js
 function teamProfile(){
     managerInfo();
 };
