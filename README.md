@@ -33,3 +33,6 @@ THEN I exit the application, and the HTML is generated
 
 ### Screenshot of finished HTML
 <img width="1679" alt="Screen Shot 2022-10-31 at 4 47 33 PM" src="https://user-images.githubusercontent.com/107062112/199107419-7c1f865b-b770-40b5-b368-dcd43e5acf37.png">
+
+### Link to finished HTML
+https://github.com/JustinRuiz321/10-Team-Profile-Generator/blob/main/dist/index.html
